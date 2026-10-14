@@ -222,14 +222,15 @@ public class NetworkTraffic extends TextView {
                         setTextSize(TypedValue.COMPLEX_UNIT_PX, (float) mTextSize);
                         setText(output.toString());
 
+                    // Control the display size of the network traffic indicator view
                         int currentSize = getResources().getDimensionPixelSize(R.dimen.net_traffic_text_size);                        
                         setTextSize(TypedValue.COMPLEX_UNIT_PX, currentSize);
                         String textContent = output.toString();
                         SpannableString span = new SpannableString(textContent);
                         int lineIndex = textContent.indexOf("\n");
                         if (lineIndex != -1) {
-                            span.setSpan(new RelativeSizeSpan(1.32f), 0, lineIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);                            
-                            span.setSpan(new RelativeSizeSpan(0.88f), lineIndex + 1, textContent.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            span.setSpan(new RelativeSizeSpan(1.28f), 0, lineIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);                            
+                            span.setSpan(new RelativeSizeSpan(0.92f), lineIndex + 1, textContent.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                         }                        
                         setText(span);
                         setTextColor(mIconTint);
